@@ -27,6 +27,7 @@ public class logincontroller extends HttpServlet {
 		obj.setPassword(password);
 		if(obj.check())
 		{
+			request.setAttribute("loginname",loginname);
 			RequestDispatcher dispatch=request.getRequestDispatcher("success.jsp");
 			dispatch.forward(request,response);
 		}
